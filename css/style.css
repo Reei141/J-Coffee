@@ -1,0 +1,28 @@
+:root{
+    --color1: #FFEAC5;
+    --color2: #FFDBB5;
+    --color3: #6C4E31; 
+    --color4: #603F26;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'outfit', sans-serif;
+    background-color: var(--color1);
+    color: var(--color4);
+}
+
+/* NAVBAR */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
