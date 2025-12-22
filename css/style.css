@@ -1,8 +1,9 @@
 :root{
-    --color1: #FFEAC5;
-    --color2: #FFDBB5;
-    --color3: #6C4E31; 
-    --color4: #603F26;
+    --color1: #F8F4E1;
+    --color2: #AF8F6F;
+    --color3: #74512D; 
+    --color4: #543310;
+    --color5: #35200a;
 }
 
 *{
@@ -15,7 +16,7 @@
 }
 
 body{
-    font-family: 'outfit', sans-serif;
+    font-family: 'poppins', sans-serif;
     background-color: var(--color1);
     color: var(--color4);
 }
@@ -25,4 +26,118 @@ body{
 nav{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%; 
+    /* PADDING. rem = relative terhadap 16px. 7% = relative terhadap lebar layar */
+    /* background-color: var(--color2); */
+    border-bottom: 2.5px solid var(--color3);
+    position: fixed;
+    /* position FIXED agar navbar tetap berada di atas saat scroll*/
+    top : 0;
+    left: 0;
+    right: 0;
+    /* top, left, right untuk posisi navbar */
+    z-index: 9999;
+    /* Supaya navbar selalu di atas konten lain */
+    background: linear-gradient(to right, var(--color2), var(--color3));
+}
+
+.navbar .navbar-logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color4);
+    font-style: italic;
+    text-shadow: #74512D 1px 1px 2px;
+}
+
+.navbar .navbar-logo span{
+    color: var(--color3);
+}
+
+.navbar .navbar-nav a{
+    color: var(--color5);
+    display: inline-block;
+    /* jadiin kotak karna a itu tulisan kecil */
+    font-size: 1.5rem;
+}
+
+.navbar .navbar-nav a:hover{
+    color: var(--color4);
+}
+
+/* menciptakan sebuah garis di bawah navbar */
+.navbar .navbar-nav a::after{
+    content:  '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--color4);
+    transform: scaleX(0);
+    /* transform: scaleX(0) membuat garis tidak terlihat */
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+    transition: transform 0.2s linear;
+    /* membuat garis terlihat dengan transisi */
+}
+
+.navbar .navbar-extra a{
+    color: var(--color5);
+    margin: 0.5rem;
+}
+
+.navbar .navbar-extra a:hover{
+    color: var(--color4);
+}
+
+/* untuk dekstop hamburger-menu akan hilang */
+#hamburger-menu{
+    display: none;
+}
+
+/* media queries */
+
+
+/* 
+Responsive = tampilan nurut ukuran layar
+Breakpoint = titik “kalau layar segini, CSS ganti”
+Media query = alat buat bilang: “Kalau layar sekian, lakukan ini” 
+*/
+
+/* Laptop */
+@media (max-width: 1366px){
+    html {
+        font-size : 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px){
+    html {
+        font-size : 62.5%;
+    }
+
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    /* ini mindahin posiso navbar. saat hamburger di click dia masuk ke hamburger */
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right : -100%;
+        /* -100 -> keluar dari layar 0 -?> disebelah kanan*/
+        background-color: red;
+        width: 30rem;
+        height: 100vh;
+    }
+
+    .navbar
+}
+
+/* Mobile Phone */
+@media (max-width: 450px){
+    html {
+        font-size : 55%;
+    }
 }
