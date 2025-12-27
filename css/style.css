@@ -16,7 +16,7 @@
 }
 
 body{
-    font-family: 'poppins', sans-serif;
+    font-family: 'Pppins', sans-serif;
     background-color: var(--color1);
     color: var(--color4);
 }
@@ -127,12 +127,34 @@ Media query = alat buat bilang: “Kalau layar sekian, lakukan ini”
         top: 100%;
         right : -100%;
         /* -100 -> keluar dari layar 0 -?> disebelah kanan*/
-        background-color: red;
+        background-color: var(--color3);
         width: 30rem;
         height: 100vh;
+        transition: right 0.3s ease;
+        /* transisi biar smooth */
     }
 
-    .navbar
+    .navbar .navbar-nav.active{
+        right: 0;
+        /* pas active dia masuk ke layar */
+    }
+
+    .navbar .navbar-nav a{
+        color: var(--color1);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+}
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(0.2);
+        /* ini bagian garis di bawah tulisannya*/
+}
 }
 
 /* Mobile Phone */
